@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HireMe — AI Resume Assistant</title>
+  <meta name="description"
+    content="Chat with an AI that answers recruiter questions directly from a candidate's resume." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=2" />
+</head>
+
+<body>
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="logo">
+        <span class="logo-icon">⚡</span>
+        <span class="logo-text">HireMe</span>
+      </div>
+    </div>
+
+    <div class="candidate-card" id="candidateCard">
+      <div class="candidate-avatar" id="candidateAvatar">?</div>
+      <div class="candidate-info">
+        <p class="candidate-name" id="candidateName">No resume loaded</p>
+        <p class="candidate-sub" id="candidateSub">Upload a PDF to begin</p>
+      </div>
+    </div>
+
+
+
+    <div class="suggested-questions">
+      <p class="section-title">Try asking…</p>
+      <button class="suggestion-btn" id="s1">What are their top skills?</button>
+      <button class="suggestion-btn" id="s2">How many years of experience?</button>
+      <button class="suggestion-btn" id="s3">Tell me about their education.</button>
+      <button class="suggestion-btn" id="s4">What projects have they worked on?</button>
+    </div>
+  </aside>
+
+  <!-- Main Chat Area -->
+  <main class="chat-area">
+    <header class="chat-header">
+      <h1 class="chat-title">Resume Chat</h1>
+      <p class="chat-subtitle" id="headerSubtitle">Ask anything about the candidate</p>
+    </header>
+
+    <div class="messages-wrapper">
+      <div class="messages" id="messages">
+        <div class="welcome-message">
+          <div class="welcome-icon">🤖</div>
+          <h2>Hi, I'm the HireMe assistant.</h2>
+          <p>I can answer any question about the candidate's resume — skills, experience, education, projects, and more.
+            Ask me anything!</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="input-area">
+      <div class="input-container">
+        <textarea id="questionInput" class="chat-input" placeholder="Ask a question about the candidate…" rows="1"
+          autocomplete="off"></textarea>
+        <button class="send-btn" id="sendBtn" aria-label="Send message">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+            <path
+              d="M3.478 2.405a.75.75 0 00-.926.94l2.432 7.905H13.5a.75.75 0 010 1.5H4.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.405z" />
+          </svg>
+        </button>
+      </div>
+      <p class="input-hint">Press <kbd>Enter</kbd> to send · <kbd>Shift+Enter</kbd> for new line</p>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3/dist/purify.min.js"></script>
+  <script src="app.js?v=2"></script>
+</body>
+
+</html>
